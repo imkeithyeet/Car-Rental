@@ -27,9 +27,9 @@ import { CustomButton } from "."
         <div className="hero__image">
             <Image src="/heros.png" alt="hero" 
             fill className="object-contain" />
+            </div>
             <div className="hero__image-overlay"/>
         </div>
-        </div> 
     </div>
   )
 }
