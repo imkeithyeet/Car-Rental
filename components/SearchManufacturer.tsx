@@ -18,6 +18,7 @@ query === ""
   .replace(/\s+/g, "")
   .includes(query.toLowerCase().replace(/\s+/g, "")
   )))
+
   return (
     <div className='search-manufacturer'>
 
@@ -48,15 +49,27 @@ query === ""
           >
             <Combobox.Options>
              {filteredManufacturers.length === 0 &&
-             query !== "" && (
+             query !== "" ? (
               <Combobox.Option
               value={query}
               className="search-manufacturer__option"
               >
                 Create "{query}"
               </Combobox.Option>
-
-             )}
+             ):(
+              filteredManufacturers.map((item)=>(
+              <Combobox.Option
+              key={item}
+              className={({active})=> `
+              relative search-manufacturer__option
+              ${active ? 'bg-primary-blue': 'text-gray-900'}
+              `}
+              value={item}
+              >
+                {item}
+              </Combobox.Option>
+              )
+             ))}
             </Combobox.Options>
 
           </Transition>
