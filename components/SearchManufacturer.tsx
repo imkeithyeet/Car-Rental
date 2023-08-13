@@ -48,16 +48,7 @@ query === ""
           afterLeave={()=>setQuery('')}
           >
             <Combobox.Options>
-             {filteredManufacturers.length === 0 &&
-             query !== "" ? (
-              <Combobox.Option
-              value={query}
-              className="search-manufacturer__option"
-              >
-                Create "{query}"
-              </Combobox.Option>
-             ):(
-              filteredManufacturers.map((item)=>(
+             {filteredManufacturers.map((item)=>(
               <Combobox.Option
               key={item}
               className={({active})=> `
@@ -69,7 +60,7 @@ query === ""
                 {item}
               </Combobox.Option>
               )
-             ))}
+             )}
             </Combobox.Options>
 
           </Transition>
