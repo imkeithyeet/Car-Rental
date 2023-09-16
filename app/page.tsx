@@ -4,7 +4,7 @@ import { CarCard, CustomFilter, Hero, SearchBar, ShowMore } from '@/components';
 import { fuels, yearsOfProduction } from '@/constants';
 import { fetchCars } from '@/utils';
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
   const [allCars, setAllCars] = useState([]);
@@ -76,7 +76,7 @@ export default function Home() {
             <>
               <div className='home__cars-wrapper'>
                 {allCars?.map((car) => (
-                  <CarCard key={car.id} car={car} />
+                  <CarCard key={car.id ?? `default-id`} car={car} />
                 ))}
               </div>
               <ShowMore
